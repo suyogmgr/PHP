@@ -1,7 +1,7 @@
 <?php
     $host = "sql103.infinityfree.com";
     $user = "if0_38409299";
-    $pass = "";
+    $pass = "yourpassword";
     $db_name = "if0_38409299_project";
     $conn = "";
 
