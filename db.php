@@ -1,8 +1,8 @@
 <?php
-    $host = "localhost";
-    $user = "rana";
-    $pass = "@Suyog123";
-    $db_name = "project";
+    $host = "sql103.infinityfree.com";
+    $user = "if0_38409299";
+    $pass = "";
+    $db_name = "if0_38409299_project";
     $conn = "";
 
 
