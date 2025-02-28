@@ -1,97 +1,124 @@
 @import url('https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&display=swap');
 
-
 *{
-    padding: 0;
     margin: 0;
-    box-sizing: border-box;
+    padding: 0;
+    box-sizing:border-box;
+    /* outline: 1px solid red; */
 }
 
+body{
+    background-color: #0a0808;
+    font-family: "Bona Nova", serif;
+   
+}
 
 main{
-    font-family: "Bona Nova", serif;
-    border: 10px solid blue;
-    display: flex;
     height: 100dvh;
-    flex-direction: column;
+    display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ddd;
-}
-
-h2{
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 20px;
+    color: #00ffffcd;
 }
 
 .form_container{
-    font-size: 1.2rem;
-    background-color: #11121ac7;
-    color: #fff;
-    width: 90%;
-    max-width: 500px;
-    height: 75%;
-    padding: 40px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
-    overflow: hidden;
+    min-height: 65%;
+    width: 400px;
+    min-width: 300px;
+    background-color: #1e1313;
+    position: relative;
     border-radius: 10px;
-    transition: all 300ms ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-label{
-    font-size: 1.5rem;
-    font-size: bold;
-    margin-top: 10px;
+
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
 }
 
-input{
+.form_container::after, .form_container::before{
+    content: '';
+    background-image: conic-gradient(from var(--angle), transparent 70%, blue);
+    position: absolute;
+    height: 100%;
     width: 100%;
-    padding: 10px;
-    font-size: 1.2rem;
-    border: 1px solid #ccc;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    padding: 5px;
     border-radius: 10px;
-    margin-top: 5px;
-    outline: none;
+    animation: spin 4s linear infinite;
 }
 
-span{
-    color: rgba(248, 0, 0, 0.863);
-    font-size: 1.12rem;
+.form_container::before{
+    filter: blur(1.5rem);
+    opacity: 0.6;
+}
+
+@keyframes spin{
+    from{
+        --angle: 0deg;
+    }to{
+        --angle: 360deg;
+    }
+}
+
+h2{
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 2rem;
+}
+
+.form_container label{
+    align-self: flex-start;
+    font-size: 1.2rem;
+    padding: 10px 0 10px 20px;
+}
+
+.form_container input{
+    width: 80%;
+    padding: 0.6rem;
+    background-color: #f1ecec;
+    display: block;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+.form_container input:hover{
+    outline: 2px solid blue;
+}
+
+.form_container span{
+    color: red;
+    font-size: 1rem;
+    padding-top: 10px;
 }
 
 .submit{
-    margin-top: 10px;
     width: 100%;
     display: flex;
     justify-content: center;
+    padding: 2rem;
 }
 
 .submit input{
-    font-size: 1.3rem;
-    text-align: center;
-    cursor: pointer;
-    width: 30%;
-    background-color: rgba(47, 42, 42, 0.721);
     color: #ffffff;
-    padding: 15px 0;
+    padding: .8rem;
+    font-size: 1.2rem;
+    width: 40%;
+    text-transform: capitalize;
+    background-color: #3b48ff;
     border: none;
-    border-radius: 8px;
-    transition: transform 300ms ease;
-}
-
-.form_container:hover{
-    background-color: #11121ace;
-}
-
-.focus-input:hover{
-    outline: 2px solid blueviolet;
+    transition: background-color 200ms;
 }
 
 .submit input:hover{
-    transform: scale(1.12);
-}
-
-.submit input:active{
-    transform: scale(0.97);
+    background-color:#3b48ff86;
 }

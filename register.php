@@ -90,21 +90,21 @@
     <main> 
       <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="form_container">
       <h2>Register</h2>
-        <label for="username">Name<span>*</span> </label><br>
-        <input class="focus-input" type="text" id="username" name="username" value="<?php echo $username; ?>" placeholder="Enter your name" required><br>
-        <span><?php echo $username_err; ?></span><br><br>
+        <label for="username">Name<span>*</span> </label>
+        <input type="text" id="username" name="username" value="<?php echo $username; ?>" placeholder="Enter your name" required> 
+        <span><?php echo $username_err; ?></span>
 
-        <label for="email">Email<span>*</span></label><br>
-        <input class="focus-input" type="text" id="email" name="email" value="<?php echo $email;?>" placeholder="Enter your email" required><br>
-        <span><?php echo $email_err; ?></span><br><br>
+        <label for="email">Email<span>*</span></label> 
+        <input type="text" id="email" name="email" value="<?php echo $email;?>" placeholder="Enter your email" required> 
+        <span><?php echo $email_err; ?></span>  
         
-        <label for="password">Password<span>*</span></label><br>
-        <input class="focus-input" type="password" id="password" name="password" placeholder="Enter your password"><br>
-        <span><?php echo $password_err; ?></span><br><br>
+        <label for="password">Password<span>*</span></label> 
+        <input type="password" id="password" name="password" placeholder="Enter your password"> 
+        <span><?php echo $password_err; ?></span>  
 
-        <label for="conform_password">Conform Password<span>*</span></label><br>
-        <input class="focus-input" type="password" id="conform_password" name="conform_password" placeholder="Re-type your password"><br>
-        <span><?php echo $conform_password_err; ?></span><br><br>
+        <label for="conform_password">Conform Password<span>*</span></label> 
+        <input type="password" id="conform_password" name="conform_password" placeholder="Re-type your password"> 
+        <span><?php echo $conform_password_err; ?></span>  
         
         <div class="submit">
             <input type="submit" value="submit" name="submit">
