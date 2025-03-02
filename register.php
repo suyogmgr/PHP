@@ -56,20 +56,32 @@
             $hash = password_hash($password, PASSWORD_DEFAULT);
 
             $sql = "INSERT INTO users(user, email, password) 
-            VALUES('$username', '$email', '$hash')";
+            VALUES(?, ?, ?)";
+            
+            // try{
+            //     mysqli_query($conn, $sql);
+            //     echo "Registered Sucessfully";
 
+            //     session_destroy();
+
+            //     header("Location: login.php");
+
+            // }
+            // catch(Exception){
+            //     echo "Something went wrong";
+            // }
+
+            
             try{
-                mysqli_query($conn, $sql);
-                echo "Registered Sucessfully";
+                $stmt = mysqli_prepare($conn, $sql);
+                mysqli_stmt_bind_param($stmt, "sss", $username, $email, $hash);
+                mysqli_stmt_execute($stmt); 
 
                 session_destroy();
-
                 header("Location: login.php");
-
-            }
-            catch(Exception){
-                echo "Something went wrong";
-            }
+            }catch (mysqli_sql_exception $e) {
+            echo "Something went wrong: " . $e->getMessage();
+        }
         }
 
     }

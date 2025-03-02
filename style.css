@@ -19,12 +19,14 @@ main{
     justify-content: center;
     align-items: center;
     color: #00ffffcd;
+    padding: 50px;
 }
 
 .form_container{
     min-height: 65%;
     width: 400px;
     min-width: 300px;
+    max-height: 90%;
     background-color: #1e1313;
     position: relative;
     border-radius: 10px;
@@ -33,7 +35,6 @@ main{
     justify-content: center;
     align-items: center;
 }
-
 
 @property --angle{
     syntax: "<angle>";
