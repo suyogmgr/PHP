@@ -6,7 +6,7 @@
     // $conn = "";
 
     $host = 'localhost';
-    $user = 'rana';
+    $user = 'root';
     $pass = '';
     $db_name = 'login';
     $conn = '';
